@@ -13,10 +13,9 @@ def generate_voice(text: str) -> str:
     """
     # Ensure audio directory exists
     os.makedirs("audio", exist_ok=True)
-
+    
     filename = f"audio_{uuid.uuid4()}.mp3"
-    filepath = f"audio/{filename}"
-
+    filepath = f"/tmp/{filename}"
     try:
         with client.audio.speech.with_streaming_response.create(
             model="gpt-4o-mini-tts",

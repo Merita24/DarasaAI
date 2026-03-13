@@ -15,6 +15,14 @@ app.include_router(whatsapp_router)
 
 app.mount("/audio",StaticFiles(directory="audio"),name="audio")
 
+@app.get("/")
+def home():
+    return {
+        "message": "Welcome to DarasaAI",
+        "description": "AI classroom assistant for low-resource schools",
+        "docs": "/docs"
+    }
+
 #OFFLINE USSD CLI INTERFACE
 
 def start_cli():
