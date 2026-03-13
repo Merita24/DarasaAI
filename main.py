@@ -19,13 +19,13 @@ app.mount("/audio",StaticFiles(directory="audio"),name="audio")
 def home():
     return {
         "message": "Welcome to DarasaAI",
-        "description": "AI classroom assistant for low-resource schools",
+        "description":"AI classroom assistant for low-resource schools",
         "docs": "/docs"
     }
 
 #OFFLINE USSD CLI INTERFACE
 
-def start_cli():
+'''def start_cli():
     print("Welcome to DarasaAI USSD CLI Interface!")
 
     while True:
@@ -79,14 +79,15 @@ def start_cli():
 
         else:
             print("Invalid choice. Please try again.")
-            
+            '''
 #ENTRY POINT 
 
 if __name__=="__main__":
     mode=input("Start system in: \n1.Online mode \n.Offline CLI Mode\n Select:")
     if mode=="1":
         uvicorn.run(app,host="0.0.0.0",port=8000)
-    elif mode=="2":
-        start_cli()
+        
+        '''elif mode=="2":
+         start_cli()'''
     else:
         print("Invalid selection. Please restart the application and select a valid mode.")
