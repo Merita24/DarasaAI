@@ -80,14 +80,3 @@ def home():
         else:
             print("Invalid choice. Please try again.")
             '''
-#ENTRY POINT 
-
-if __name__=="__main__":
-    mode=input("Start system in: \n1.Online mode \n.Offline CLI Mode\n Select:")
-    if mode=="1":
-        uvicorn.run(app,host="0.0.0.0",port=8000)
-        
-        '''elif mode=="2":
-         start_cli()'''
-    else:
-        print("Invalid selection. Please restart the application and select a valid mode.")
